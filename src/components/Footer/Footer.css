@@ -1,0 +1,36 @@
+.footer-section {
+  height: 100px;
+  position: fixed;
+  bottom: 0;
+  background: #000;
+  color: #fff;
+  width: 100%;
+  display: flex;
+  justify-content: space-around; /* Distribute links evenly */
+  align-items: center;           /* Center them vertically */
+}
+
+/* Style links to appear inline with icon and text close together */
+.footer-link {
+  text-decoration: none;
+  color: #fff;
+  display: inline-flex;   /* Ensures the link only covers icon + text */
+  align-items: center;
+  font-size: 1.2rem;
+  gap: 10px;        
+  white-space: nowrap;
+}
+
+.footer-link:hover {
+  opacity: 0.8; /* Slight hover effect */
+}
+
+.footerIcons {
+  max-width: 50px;
+  height: auto;
+}
+
+.footer-section a {
+  width: fit-content;
+}
+

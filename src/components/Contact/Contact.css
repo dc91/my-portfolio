@@ -1,0 +1,27 @@
+.contact-section {
+  padding: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin-bottom: 10px;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 5px;
+}
+
+#fishingBlack {
+  position: fixed;
+  bottom: 70px;
+  right: 0;
+  max-height: 20vh;
+}
