@@ -100,9 +100,9 @@ function Skills() {
 
         {/* Reset Button */}
         {activeFace && !isCollapsing && (
-          <button className="reset-button" onClick={handleReset}>
+          <span className="reset-button" onClick={handleReset}>
             Reset Cube
-          </button>
+          </span>
         )}
       </div>
 

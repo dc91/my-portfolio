@@ -1,14 +1,14 @@
 
 .about-section p {
-  font-size: 2rem;
+  font-size: 1.75rem;
   max-width: 40vw;
   margin: 0 auto;
-  padding: 300px 300px 150px 300px;
+  padding: 20vh 30vw 15vh 30vw;
 }
 #standingBlack {
   position:fixed;
   left: 50px;
-  bottom: 90px;
+  bottom: 70px;
   max-width: 10vw;
   max-height: 50vh;
   animation: fd 1s ease-in forwards;
@@ -16,7 +16,7 @@
 #jumpingBlack {
   position:fixed;
   right: 50px;
-  bottom: 90px;
+  bottom: 70px;
   max-width: 20vw;
   max-height: 50vh;
 }  

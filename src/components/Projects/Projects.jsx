@@ -11,45 +11,43 @@ function Projects() {
         <div className="project-card">
           <p className='projectName'>ToDoLy</p>
           <div className='viewPortCards'>
-            <img src={Todoly1}/>
+            <img src={Todoly1} />
           </div>
           <a className='button' href="https://github.com/your-repo" target="_blank" rel="noreferrer">GitHub Link</a>
         </div>
         <div className="project-card">
-        <p className='projectName'>Asset Tracker</p>
-        <div className='viewPortCards'>
-          <img src={Todoly1}/>
-        </div>
-          <a className='button' href="https://github.com/your-repo" target="_blank" rel="noreferrer">GitHub Link</a>
-        </div>
-        <div className="project-card">
-        <p className='projectName'>CV</p>
+          <p className='projectName'>Asset Tracker</p>
           <div className='viewPortCards'>
-            <img src={Todoly1}/>
+            <img src={Todoly1} />
           </div>
           <a className='button' href="https://github.com/your-repo" target="_blank" rel="noreferrer">GitHub Link</a>
         </div>
-      </div>
-      <div className="projects-grid2">  
         <div className="project-card">
-        <p className='projectName'>Munamii</p>
-        <div className='viewPortCards'>
-          <img src={Todoly1}/>
-        </div>
+          <p className='projectName'>CV</p>
+          <div className='viewPortCards'>
+            <img src={Todoly1} />
+          </div>
           <a className='button' href="https://github.com/your-repo" target="_blank" rel="noreferrer">GitHub Link</a>
         </div>
         <div className="project-card">
-        <p className='projectName'>People Manager</p>
-        <div className='viewPortCards'>
-          <img src={Todoly1}/>
-        </div>
+          <p className='projectName'>Munamii</p>
+          <div className='viewPortCards'>
+            <img src={Todoly1} />
+          </div>
           <a className='button' href="https://github.com/your-repo" target="_blank" rel="noreferrer">GitHub Link</a>
         </div>
         <div className="project-card">
-        <p className='projectName'>This Site</p>
-        <div className='viewPortCards'>
-          <img src={Todoly1}/>
+          <p className='projectName'>People Manager</p>
+          <div className='viewPortCards'>
+            <img src={Todoly1} />
+          </div>
+          <a className='button' href="https://github.com/your-repo" target="_blank" rel="noreferrer">GitHub Link</a>
         </div>
+        <div className="project-card">
+          <p className='projectName'>This Site</p>
+          <div className='viewPortCards'>
+            <img src={Todoly1} />
+          </div>
           <a className='button' href="https://github.com/your-repo" target="_blank" rel="noreferrer">GitHub Link</a>
         </div>
       </div>
@@ -57,5 +55,6 @@ function Projects() {
     </section>
   );
 }
+
 
 export default Projects;

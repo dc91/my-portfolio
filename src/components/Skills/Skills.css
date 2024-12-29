@@ -1,7 +1,14 @@
+:root {
+  --cubeWidth: 23vw;
+  --cubeDistance: calc(var(--cubeWidth)*1.025/-2);
+  --cubeDistance2: calc(var(--cubeDistance)*1.04);
+}
+
 #deer2Black {
   position: fixed;
-  bottom: 100px;
+  bottom: 80px;
   width: 100vw;
+  pointer-events: none; /* Allow clicks to pass through */
 }
 
 .skills-container {
@@ -11,66 +18,118 @@
   justify-content: center;
   align-items: center;
   /* perspective: 1000px; */
-
 }
+
+
+/* -------------------------------- */
+/* ----------------CUBE------------ */
+/* -------------------------------- */
 
 .cube-wrapper {
   position: relative;
 }
 
-/* The cube itself */
 .cube {
   position: relative;
-  width: 500px;
-  height: 500px;
+  width: var(--cubeWidth);
+  height: var(--cubeWidth);
+  /* max-width: 500px;
+  max-height: 500px; */
   transform-style: preserve-3d;
-  /* Removed breathe animation from here */
 }
 
-/* Apply breathe animation only when not expanded or collapsing */
-.cube-wrapper:not(.show-frontend):not(.show-backend):not(.show-design):not(.collapsing-frontend):not(.collapsing-backend):not(.collapsing-design) .cube {
-  animation: breathe 2s ease-in-out infinite alternate;
-}
-
-/* Faces of the cube */
 .face {
   position: absolute;
+  margin-top: -3rem;
   width: 100%;
   height: 100%;
   background: #333;
   color: #fff;
-  font-size: 3.2rem;
+  font-size: 2.8vw;
   font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; 
 }
 
-.front {
-  animation: breatheFront 2s ease-in-out infinite alternate;
+
+/* -------------------------------- */
+/* ------------CIRCLES------------- */
+/* -------------------------------- */
+
+.circles-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  position: absolute;
+  top: 10.5rem;
+  left: -5rem;
+  scale: 0.8;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 2s; /* wait until the cube is done expanding */
 }
-.right {
-  animation: breatheRight 2s ease-in-out infinite alternate;
+
+.circle {
+  background: #ff5722;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 1.4rem;
 }
-.left {
-  animation: breatheLeft 2s ease-in-out infinite alternate;
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    scale: 1;
+  }
 }
+
+
+/* -------------------------------- */
+/* ----------RESET BUTTON---------- */
+/* -------------------------------- */
+.reset-button {
+  position: absolute;
+  top: 1rem;
+  right: -55%;
+  display: inline-block;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 2s; /* wait until the cube is done expanding */
+}
+.reset-button {
+  color: #999;
+  font-weight: bold;
+  transition: all 1s ease;
+}
+
+.reset-button:hover {
+  color: #fff;
+}
+
+
+/* -------------------------------- */
+/* ------------HOVER FACE---------- */
+/* -------------------------------- */
 
 /* Hover effects only when not expanded or collapsing */
 .cube-wrapper:not(.show-frontend):not(.show-backend):not(.show-design):not(.collapsing-frontend):not(.collapsing-backend):not(.collapsing-design) .front:hover {
-  background-color: black;
   box-shadow: 0 0 50px 15px #48abe0;
 }
 
 .cube-wrapper:not(.show-frontend):not(.show-backend):not(.show-design):not(.collapsing-frontend):not(.collapsing-backend):not(.collapsing-design) .right:hover {
-  background-color: black;
   box-shadow: 0 0 50px 15px #e04848;
 }
 
 .cube-wrapper:not(.show-frontend):not(.show-backend):not(.show-design):not(.collapsing-frontend):not(.collapsing-backend):not(.collapsing-design) .left:hover {
-  background-color: black;
   box-shadow: 0 0 50px 15px #e0dd48;
 }
 
@@ -86,64 +145,54 @@
   cursor: default; /* Change cursor to default */
 }
 
-/* Breathing Animations */
+
+/* -------------------------------- */
+/* ------------BREATHING----------- */
+/* -------------------------------- */
+
+/* Apply breathe animation only when not expanded or collapsing */
+.cube-wrapper:not(.show-frontend):not(.show-backend):not(.show-design):not(.collapsing-frontend):not(.collapsing-backend):not(.collapsing-design) .cube {
+  animation: breathe 2s ease-in-out infinite alternate;
+}
+.front {
+  animation: breatheFront 2s ease-in-out infinite alternate;
+}
+.right {
+  animation: breatheRight 2s ease-in-out infinite alternate;
+}
+.left {
+  animation: breatheLeft 2s ease-in-out infinite alternate;
+}
+
 @keyframes breathe {
   0% { transform: rotateX(40deg) rotateY(50deg) scale(1.0); }
   100% { transform: rotateX(40deg) rotateY(50deg) scale(1.02); }
 }
 
 @keyframes breatheFront {
-  0% { transform: translateZ(-255px); }
-  100% { transform: translateZ(-258px); }
+  0% { transform: translateZ(var(--cubeDistance)); }
+  100% { transform: translateZ(var(--cubeDistance2)); }
 }
 
 @keyframes breatheRight {
-  0% { transform: rotateY(-90deg) translateZ(-255px); }
-  100% { transform: rotateY(-90deg) translateZ(-258px); }
+  0% { transform: rotateY(-90deg) translateZ(var(--cubeDistance)); }
+  100% { transform: rotateY(-90deg) translateZ(var(--cubeDistance2)); }
 }
 
 @keyframes breatheLeft {
-  0% { transform: rotateX(-90deg) translateZ(-255px); }
-  100% { transform: rotateX(-90deg) translateZ(-258px); }
-}
-
-/* The circles container will appear to the right of the now front-facing face */
-.circles-container {
-  position: absolute;
-  top: 46%;
-  left: 0; /* Adjust as needed */
-  transform: translateY(-50%);
-  opacity: 0;
-  animation: fadeIn 1s forwards;
-  animation-delay: 2s; /* wait until the cube is done expanding */
-}
-
-/* Circle styling */
-.circle {
-  background: #ff5722;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  margin: 0 0 30px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  font-size: 1.4rem;
-  white-space: nowrap;
-}
-
-/* Fade-in animation for circles */
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
+  0% { transform: rotateX(-90deg) translateZ(var(--cubeDistance)); }
+  100% { transform: rotateX(-90deg) translateZ(var(--cubeDistance2)); }
 }
 
 /* When paused (after a face is clicked), we can stop the breathing by removing animation */
 .cube.paused {
   animation: none;
 }
+
+
+/* -------------------------------- */
+/* ---------EXPAND/COLLAPSE-------- */
+/* -------------------------------- */
 
 /* FRONTEND FACE SELECTED */
 .cube-wrapper.show-frontend .cube {
@@ -152,12 +201,12 @@
 
 /* BACKEND FACE SELECTED */
 .cube-wrapper.show-backend .cube {
-  animation: expandBackend 2s forwards;
+  animation: expandBackend 3s forwards;
 }
 
 /* DESIGN FACE SELECTED */
 .cube-wrapper.show-design .cube {
-  animation: expandDesign 2s forwards;
+  animation: expandDesign 3s forwards;
 }
 
 /* Collapse Animations */
@@ -166,206 +215,147 @@
 }
 
 .cube-wrapper.collapsing-backend .cube {
-  animation: collapseBackend 2s forwards;
+  animation: collapseBackend 3s forwards;
 }
 
 .cube-wrapper.collapsing-design .cube {
-  animation: collapseDesign 2s forwards;
+  animation: collapseDesign 3s forwards;
 }
 
-/* Expand Animations */
 @keyframes expandFrontend {
   0% {
     /* Match the end of 'breathe': rotateX(40deg) rotateY(50deg) scale(1.05) */
     transform: rotateX(40deg) rotateY(50deg) scale(1.05);
-    left: 0;
+    right: 0;
     top: 0;
     margin-right: 0;
+    
   }
   25% {
     /* Face is straight forward now but not scaled up yet */
     transform: rotateX(0deg) rotateY(0deg) scale(1.0);
-    width: 500px;
-    height: 500px;
+    width: var(--cubeWidth);
+    height: var(--cubeWidth);
   }
   100% {
     /* Scaled up */
-    width: 550px;
-    height: 850px;
-    left: 270px;
-    top: -50px;
-    margin-right: 200px;
+    width: 33rem;
+    max-width: 38vw;
+    height: 100vh;
+    right: -60%;
+    z-index: -1;
   }
 }
 
 @keyframes expandBackend {
   0% {
     transform: rotateX(40deg) rotateY(50deg) scale(1.05);
-    left: 0;
+    right: 0;
     top: 0;
     margin-right: 0;
   }
   50% {
     transform: rotateX(0deg) rotateY(90deg) scale(1.0);
-    width: 500px;
-    height: 500px;
+    width: var(--cubeWidth);
+    height: var(--cubeWidth);
   }
   100% {
     transform: rotateX(0deg) rotateY(90deg);
-    width: 550px;
-    height: 850px;
-    left: 270px;
-    top: -50px;
-    margin-right: 200px;
+    width: 33rem;
+    max-width: 35vw;
+    height: 100vh;
+    right: -60%;
+    z-index: -1;
   }
 }
 
 @keyframes expandDesign {
   0% {
     transform: rotateX(40deg) rotateY(50deg) scale(1.05);
-    left: 0;
+    right: 0;
     top: 0;
     margin-right: 0;
   }
   50% {
     transform: rotateX(90deg) rotateY(0deg) scale(1.0);
-    width: 500px;
-    height: 500px;
+    width: var(--cubeWidth);
+    height: var(--cubeWidth);
   }
   100% {
     transform: rotateX(90deg) rotateY(0deg);
-    width: 550px;
-    height: 850px;
-    left: 270px;
-    top: -50px;
-    margin-right: 200px;
+    width: 33rem;
+    max-width: 35vw;
+    height: 100vh;
+    right: -60%;
+    z-index: -1;
   }
 }
 
 @keyframes collapseFrontend {
   0% {
     /* Expanded State */
-    width: 550px;
-    height: 850px;
-    left: 270px;
-    top: -50px;
-    margin-right: 200px;
+    z-index: -1;
+    width: 33rem;
+    height: 100vh;
+    right: -60%;
     transform: rotateX(0deg) rotateY(0deg) scale(1.0);
   }
   25% {
     /* Face is straight forward now but not scaled up yet */
     transform: rotateX(0deg) rotateY(0deg) scale(1.0);
-    width: 500px;
-    height: 500px;
+    width: var(--cubeWidth);
+    height: var(--cubeWidth);
   }
   100% {
     /* Initial State */
     transform: rotateX(40deg) rotateY(50deg) scale(1.0);
-    left: 0;
-    top: 0;
-    margin-right: 0;
-    width: 500px;
-    height: 500px;
+    right: 0;
+    width: var(--cubeWidth);
+    height: var(--cubeWidth);
+    z-index: 1;
   }
 }
 
 @keyframes collapseBackend {
   0% {
-    /* Expanded State */
-    width: 550px;
-    height: 850px;
-    left: 270px;
-    top: -50px;
-    margin-right: 200px;
+    z-index: -1;
+    width: 33rem;
+    height: 100vh;
+    right: -60%;
     transform: rotateX(0deg) rotateY(90deg) scale(1.0);
   }
   50% {
     transform: rotateX(0deg) rotateY(90deg) scale(1.0);
-    width: 500px;
-    height: 500px;
+    width: var(--cubeWidth);
+    height: var(--cubeWidth);
   }
   100% {
-    /* Initial State */
     transform: rotateX(40deg) rotateY(50deg) scale(1.0);
-    left: 0;
-    top: 0;
-    margin-right: 0;
-    width: 500px;
-    height: 500px;
+    right: 0;
+    width: var(--cubeWidth);
+    height: var(--cubeWidth);
+    z-index: 1;
   }
 }
 
 @keyframes collapseDesign {
   0% {
-    /* Expanded State */
-    width: 550px;
-    height: 850px;
-    left: 270px;
-    top: -50px;
-    margin-right: 200px;
+    z-index: -1;
+    width: 33rem;
+    height: 100vh;
+    right: -60%;
     transform: rotateX(90deg) rotateY(0deg) scale(1.0);
   }
   50% {
     transform: rotateX(90deg) rotateY(0deg) scale(1.0);
-    width: 500px;
-    height: 500px;
+    width: 20vw;
+    height: 20vw;
   }
   100% {
-    /* Initial State */
     transform: rotateX(40deg) rotateY(50deg) scale(1.0);
-    left: 0;
-    top: 0;
-    margin-right: 0;
-    width: 500px;
-    height: 500px;
+    right: 0;
+    width: var(--cubeWidth);
+    height: var(--cubeWidth);
+    z-index: 1;
   }
-}
-
-.reset-button {
-  position: absolute;
-  top: 0;
-  right: -200px;
-  display: inline-block;
-  cursor: pointer;
-  vertical-align: middle;
-}
-.reset-button {
-  color: #382b22;
-  padding: 0.7em 1.5em;
-  background: #fff0f0;
-  border: 2px solid #b18597;
-  border-radius: 0.75em;
-  transform-style: preserve-3d;
-  transition: transform 0.15s cubic-bezier(0, 0, 0.58, 1), background 0.15s cubic-bezier(0, 0, 0.58, 1);
-}
-.reset-button::before {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #f9c4d2;
-  border-radius: inherit;
-  box-shadow: 0 0 0 2px #b18597, 0 0.625em 0 0 #ffe3e2;
-  transform: translate3d(0, 0.75em, -1em);
-  transition: transform 0.15s cubic-bezier(0, 0, 0.58, 1), box-shadow 0.15s cubic-bezier(0, 0, 0.58, 1);
-}
-.reset-button:hover {
-  background: #ffe9e9;
-  transform: translate(0, 0.25em);
-}
-.reset-button:hover::before {
-  box-shadow: 0 0 0 2px #b18597, 0 0.5em 0 0 #ffe3e2;
-  transform: translate3d(0, 0.5em, -1em);
-}
-.reset-button:active {
-  background: #ffe9e9;
-  transform: translate(0em, 0.75em);
-}
-.reset-button:active::before {
-  box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
-  transform: translate3d(0, 0, -1em);
 }
