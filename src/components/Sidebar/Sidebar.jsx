@@ -1,7 +1,7 @@
 import React from 'react';
 import './Sidebar.css';
 import HeaderBlack from '../../assets/HeaderBlack.svg';
-import Line from '../../assets/Line.svg';
+// import Line from '../../assets/Line.svg';
 function Sidebar({ setActiveSection }) {
   return (
     <aside className="sidebar">
