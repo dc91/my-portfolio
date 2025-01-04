@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import './Skills.css';
 import Deer2 from '../../assets/Deer2.svg';
+import SkillData from './SkillData.jsx';
 
 function Skills() {
   const [activeFace, setActiveFace] = useState(null);
   const [isCollapsing, setIsCollapsing] = useState(false);
+  const [activeSkill, setActiveSkill] = useState(null);
 
   const handleClick = (faceName) => {
     setActiveFace(faceName);
@@ -14,6 +16,11 @@ function Skills() {
     if (activeFace) {
       setIsCollapsing(true);
     }
+    setActiveSkill(null)
+  };
+
+  const handleSkillClick = (skill) => {
+    setActiveSkill(skill);
   };
 
   const handleAnimationEnd = (e) => {
@@ -34,6 +41,7 @@ function Skills() {
     return classes;
   };
 
+
   return (
     <div className="skills-container">
 
@@ -48,8 +56,16 @@ function Skills() {
             aria-label="Frontend Skills"
             onKeyPress={(e) => { if (e.key === 'Enter') handleClick('frontend'); }}
           >
-            <span>Frontend Skills</span>
+            {activeSkill === null && (
+              <span>Frontend Skills</span>
+            )}
+            {activeSkill !== null && (
+              <div className='skill-details'>
+                <p>{ SkillData.find((s) => s.skill === activeSkill).content }</p>
+              </div>
+            )}
           </div>
+
           <div
             className="face right"
             onClick={() => handleClick('backend')}
@@ -58,8 +74,16 @@ function Skills() {
             aria-label="Backend Skills"
             onKeyPress={(e) => { if (e.key === 'Enter') handleClick('backend'); }}
           >
-            <span>Backend Skills</span>
+            {activeSkill === null && (
+              <span>Backend Skills</span>
+            )}
+            {activeSkill !== null && (
+              <div className='skill-details'>
+                <p>{ SkillData.find((s) => s.skill === activeSkill).content  }</p>
+              </div>
+            )}
           </div>
+          
           <div
             className="face left"
             onClick={() => handleClick('design')}
@@ -68,33 +92,28 @@ function Skills() {
             aria-label="Design Skills"
             onKeyPress={(e) => { if (e.key === 'Enter') handleClick('design'); }}
           >
-            <span>Design Skills</span>
+            {activeSkill === null && (
+              <span>Design Skills</span>
+            )}
+            {activeSkill !== null && (
+              <div className='skill-details'>
+                <p>{ SkillData.find((s) => s.skill === activeSkill).content  }</p>
+              </div>
+            )}
           </div>
         </div>
 
         {/* Render circles only if a face is active and not collapsing */}
-        {activeFace === 'backend' && !isCollapsing && (
+        {activeFace !== null && !isCollapsing && (
           <div className="circles-container">
-            <div className="circle">C</div>
-            <div className="circle">C++</div>
-            <div className="circle">C#</div>
-            <div className="circle">Python</div>
-            <div className="circle">SQL</div>
-          </div>
-        )}
-        {activeFace === 'frontend' && !isCollapsing && (
-          <div className="circles-container">
-            <div className="circle">HTML</div>
-            <div className="circle">CSS</div>
-            <div className="circle">JavaScript</div>
-            <div className="circle">React</div>
-          </div>
-        )}
-        {activeFace === 'design' && !isCollapsing && (
-          <div className="circles-container">
-            <div className="circle">Illustrator</div>
-            <div className="circle">Photoshop</div>
-            <div className="circle">Cubase</div>
+            {SkillData
+            .filter((skill) => skill.skillBranch === activeFace)
+            .map((skill, index) => (
+            <div key={index} className={`circle`} onClick={() => handleSkillClick(skill.skill)} >
+              {skill.skill}
+            </div>
+            ))
+            }
           </div>
         )}
 
