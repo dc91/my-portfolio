@@ -27,7 +27,7 @@ function App() {
 
   return (
     <div className="App">
-      <Sidebar setActiveSection={setActiveSection} />
+      <Sidebar activeSection={activeSection} setActiveSection={setActiveSection} />
       <div className="main-content">
         {renderSection()}
       </div>

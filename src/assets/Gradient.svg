@@ -1,1 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?><svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 800 800"><defs><style>.cls-1{fill:url(#radial-gradient);}.cls-2{fill:url(#radial-gradient-2);}</style><radialGradient id="radial-gradient" cx="400" cy="400" fx="400" fy="400" r="400" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#020202"/><stop offset=".11" stop-color="#010205"/><stop offset=".2" stop-color="#01050e"/><stop offset=".27" stop-color="#000a1f"/><stop offset=".31" stop-color="#000d2a"/><stop offset=".5" stop-color="#000"/><stop offset=".65" stop-color="#810000"/><stop offset=".77" stop-color="#e90000"/><stop offset=".83" stop-color="#ef4949"/><stop offset=".95" stop-color="#facaca"/><stop offset="1" stop-color="#fff"/></radialGradient><radialGradient id="radial-gradient-2" cx="400" cy="400" fx="400" fy="400" r="400" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#020202"/><stop offset=".59" stop-color="#2b2728"/><stop offset=".65" stop-color="#535051"/><stop offset=".78" stop-color="#9c9a9b"/><stop offset=".88" stop-color="#d1d0d1"/><stop offset=".96" stop-color="#f2f2f2"/><stop offset="1" stop-color="#fff"/></radialGradient></defs><g id="Layer_1-2"><g><rect class="cls-1" width="800" height="800"/><path class="cls-2" d="M799,1V799H1V1H799m1-1H0V800H800V0h0Z"/></g></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 233 100">
+    <defs>
+        <style>.cls-1{fill:url(#linear-gradient);}</style>
+        <linearGradient id="linear-gradient" x1="0" y1="50" x2="233" y2="50" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#29abe2"/>
+            <stop offset="1" stop-color="red"/>
+        </linearGradient>
+    </defs>
+    <g id="Layer_6">
+        <rect class="cls-1" width="233" height="100"/>
+    </g>
+</svg>

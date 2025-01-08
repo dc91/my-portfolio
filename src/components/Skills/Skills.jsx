@@ -61,7 +61,7 @@ function Skills() {
             )}
             {activeSkill !== null && (
               <div className='skill-details'>
-                <p>{ SkillData.find((s) => s.skill === activeSkill).content }</p>
+                { SkillData.find((s) => s.skill === activeSkill).content }
               </div>
             )}
           </div>
@@ -79,7 +79,7 @@ function Skills() {
             )}
             {activeSkill !== null && (
               <div className='skill-details'>
-                <p>{ SkillData.find((s) => s.skill === activeSkill).content  }</p>
+                { SkillData.find((s) => s.skill === activeSkill).content  }
               </div>
             )}
           </div>
@@ -97,7 +97,7 @@ function Skills() {
             )}
             {activeSkill !== null && (
               <div className='skill-details'>
-                <p>{ SkillData.find((s) => s.skill === activeSkill).content  }</p>
+                { SkillData.find((s) => s.skill === activeSkill).content  }
               </div>
             )}
           </div>

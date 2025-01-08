@@ -23,8 +23,27 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 20vw));
   gap: 2.5rem;
+  justify-content: space-evenly;
   padding: 2rem;
+  padding-top: 14vh;
+  /* transition: padding-top 2s ease; */
 }
+.projects-grid:has(.project-card.active) {
+  padding-top: 2rem;
+  transition: all 2s ease;
+}
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: 230px;
+  }
+  .project-card{
+    width: 100%;
+    max-width: 100%;
+    min-width: 500px;
+    min-height: 500px
+  }
+}
+
 
 .project-content {
   display: none;

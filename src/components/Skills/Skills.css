@@ -2,11 +2,21 @@
   --cubeWidth: 23vw;
   --cubeDistance: calc(var(--cubeWidth)*1.025/-2);
   --cubeDistance2: calc(var(--cubeDistance)*1.04);
+  --darkBlue: #579CD4;
+  --lightBlue: #A0DBF7;
+  --midBlue: #63BDEB;
+  --gray: #CCCCCB;
+  --red: #CE9178;
+  --darkGray: #808073;
+  --beige: #D7BA7D;
+  --yellow: #FDD700;
+  --purple: #C486BA;
+  --green: #59C2AD;
 }
 
 #deer2Black {
   position: fixed;
-  bottom: 80px;
+  bottom: 50px;
   width: 100vw;
   pointer-events: none; /* Allow clicks to pass through */
 }
@@ -65,7 +75,7 @@
   gap: 1rem;
   position: absolute;
   top: 10.5rem;
-  left: -5vw;
+  left: 0;
   scale: 0.8;
   opacity: 0;
   animation: fadeIn 1s forwards;
@@ -93,6 +103,60 @@
   }
 }
 
+/* -------------------------------- */
+/* ----------Skill Details---------- */
+/* -------------------------------- */
+.skill-details {
+  width: 100%;
+}
+
+.skill-details div{
+  margin: 0 auto;
+  font-size: 0.9rem;
+  width: 80%;
+  
+}
+
+.skill-details p {
+  font-family: monospace;
+}
+
+.skill-details .skill-span {
+  font-size: 2rem;
+  width: 100%;
+}
+
+.skill-details .ccSymbol {
+  color: var(--darkGray);
+}
+.skill-details .ccTag {
+  color: var(--darkBlue);
+}
+.skill-details .ccAttribute {
+  color: var(--lightBlue);
+}
+.skill-details .ccString {
+  color: var(--red);
+}
+.skill-details .ccText {
+  color: var(--gray);
+}
+.skill-details .ccClass {
+  color: var(--beige);
+}
+.skill-details .ccCurly {
+  color: var(--yellow);
+}
+.skill-details .ccImport {
+  color: var(--purple);
+}
+.skill-details .ccVar {
+  color: var(--purple);
+}
+.skill-details .ccReact {
+  color: var(--green);
+}
+
 
 /* -------------------------------- */
 /* ----------RESET BUTTON---------- */
@@ -100,7 +164,7 @@
 .reset-button {
   position: absolute;
   top: 1rem;
-  right: -55%;
+  right: -20vw;
   display: inline-block;
   cursor: pointer;
   opacity: 0;
@@ -110,7 +174,7 @@
 .reset-button {
   color: #999;
   font-weight: bold;
-  transition: all 1s ease;
+  transition: color 1s ease, font-weight 1s ease;
 }
 
 .reset-button:hover {
@@ -198,17 +262,17 @@
 
 /* FRONTEND FACE SELECTED */
 .cube-wrapper.show-frontend .cube {
-  animation: expandFrontend 3s forwards;
+  animation: expandFrontend 2.5s forwards;
 }
 
 /* BACKEND FACE SELECTED */
 .cube-wrapper.show-backend .cube {
-  animation: expandBackend 3s forwards;
+  animation: expandBackend 2.5s forwards;
 }
 
 /* DESIGN FACE SELECTED */
 .cube-wrapper.show-design .cube {
-  animation: expandDesign 3s forwards;
+  animation: expandDesign 2.5s forwards;
 }
 
 /* Collapse Animations */
@@ -229,23 +293,18 @@
     /* Match the end of 'breathe': rotateX(40deg) rotateY(50deg) scale(1.05) */
     transform: rotateX(40deg) rotateY(50deg) scale(1.05);
     right: 0;
-    top: 0;
-    margin-right: 0;
-    
   }
   25% {
-    /* Face is straight forward now but not scaled up yet */
     transform: rotateX(0deg) rotateY(0deg) scale(1.0);
+  }
+  50% {
     width: var(--cubeWidth);
     height: var(--cubeWidth);
   }
   100% {
-    /* Scaled up */
-    width: 55rem;
-    max-width: 35vw;
+    width: 45vw;
     height: 100vh;
     right: -25vw;
-    top: 0;
     z-index: -1;
   }
 }
@@ -254,8 +313,6 @@
   0% {
     transform: rotateX(40deg) rotateY(50deg) scale(1.05);
     right: 0;
-    top: 0;
-    margin-right: 0;
   }
   50% {
     transform: rotateX(0deg) rotateY(90deg) scale(1.0);
@@ -264,10 +321,9 @@
   }
   100% {
     transform: rotateX(0deg) rotateY(90deg);
-    width: 33rem;
-    max-width: 35vw;
+    width: 45vw;
     height: 100vh;
-    right: -60%;
+    right: -25vw;
     z-index: -1;
   }
 }
@@ -276,8 +332,6 @@
   0% {
     transform: rotateX(40deg) rotateY(50deg) scale(1.05);
     right: 0;
-    top: 0;
-    margin-right: 0;
   }
   50% {
     transform: rotateX(90deg) rotateY(0deg) scale(1.0);
@@ -286,10 +340,9 @@
   }
   100% {
     transform: rotateX(90deg) rotateY(0deg);
-    width: 33rem;
-    max-width: 35vw;
+    width: 45vw;
     height: 100vh;
-    right: -60%;
+    right: -25vw;
     z-index: -1;
   }
 }
@@ -297,15 +350,19 @@
 @keyframes collapseFrontend {
   0% {
     /* Expanded State */
-    z-index: -1;
-    width: 33rem;
+    transform: rotateX(0deg) rotateY(0deg) scale(1.0);
+    width: 45vw;
     height: 100vh;
-    right: -60%;
-    transform: rotateX(0deg) rotateY(0deg) scale(1.0);
+    right: -25vw;
+    z-index: -1;
   }
-  25% {
-    /* Face is straight forward now but not scaled up yet */
+  55% {
     transform: rotateX(0deg) rotateY(0deg) scale(1.0);
+    width: var(--cubeWidth);
+    height: var(--cubeWidth);
+  }
+  75%{
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(50deg) scale(1.0);
     width: var(--cubeWidth);
     height: var(--cubeWidth);
   }
@@ -321,10 +378,10 @@
 
 @keyframes collapseBackend {
   0% {
-    z-index: -1;
-    width: 33rem;
+    width: 45vw;
     height: 100vh;
-    right: -60%;
+    right: -25vw;
+    z-index: -1;
     transform: rotateX(0deg) rotateY(90deg) scale(1.0);
   }
   50% {
@@ -343,10 +400,10 @@
 
 @keyframes collapseDesign {
   0% {
-    z-index: -1;
-    width: 33rem;
+    width: 45vw;
     height: 100vh;
-    right: -60%;
+    right: -25vw;
+    z-index: -1;
     transform: rotateX(90deg) rotateY(0deg) scale(1.0);
   }
   50% {
