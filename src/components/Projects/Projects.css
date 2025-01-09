@@ -273,10 +273,10 @@
 
 #deerBlack {
   position: fixed;
-  right: 0;
-  bottom: 45px;
-  max-height: 25vh;
-  max-width: 23vw;
+  left: 0;
+  bottom: 55px;
+  /* max-height: 25vh; */
+  width: 28vw;
   z-index: -1;
 }
 
@@ -403,10 +403,15 @@
 }
 
 .page-content.fade-out #deerBlack{
-  right: -30vw;
-  transition: right 0.8s ease-in-out;
+  left: -30vw;
+  transition: left 0.8s ease-in-out;
 }
 
 .page-content.fade-in #deerBlack{
- animation: moveDilan 1s ease-in-out;
+ animation: moveDilan3 0.8s ease-in-out;
+}
+
+@keyframes moveDilan3 {
+  from{ left: -30vw}
+  to{ left: 0; }
 }

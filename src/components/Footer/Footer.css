@@ -6,11 +6,10 @@
   color: #fff;
   width: 100%;
   display: flex;
-  justify-content: space-around; /* Distribute links evenly */
-  align-items: center;           /* Center them vertically */
+  justify-content: space-around;
+  align-items: center;          
 }
 
-/* Style links to appear inline with icon and text close together */
 .footer-link {
   text-decoration: none;
   color: #fff;
@@ -20,17 +19,26 @@
   gap: 10px;        
   white-space: nowrap;
 }
+.footer-link svg{
+  fill: #fff;
+  width: 50px;
+}
 
 .footer-link:hover {
-  opacity: 0.8; /* Slight hover effect */
+  color:  red;
 }
 
-.footerIcons {
-  max-width: 50px;
-  height: auto;
+#githubFoot {
+  padding-right: 5%;
 }
-
-.footer-section a {
-  width: fit-content;
+#githubFoot svg{
+  width: 45px;
 }
-
+.phoneLines {
+  opacity: 0;
+  transition: opacity 2s ease;
+ }
+#phoneFoot:hover .phoneLines {
+ opacity: 1;
+ transition: opacity 2s ease;
+}

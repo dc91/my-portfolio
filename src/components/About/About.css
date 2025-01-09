@@ -1,6 +1,6 @@
 
 .about-section p {
-  font-size: 1.75rem;
+  font-size: 1.65rem;
   max-width: 40vw;
   margin: 0 auto;
   padding: 15vh 30vw 15vh 30vw;
@@ -20,24 +20,12 @@
   stroke-width: 3px;
 }
 
-/* #linear-gradient2 {
- animation: rotate 10s forwards infinite; 
-}
-
-@keyframes rotate {
-  from{
-rotate: 0deg;
-  }
-  to{
-rotate: 360deg;
-  }
-} */
-
 #dilan {
   rotate: 0;
 }
 
-/* //fade out and smooth between pages!! */
+
+
 .page-content .about-section p {
   transition: opacity 0.8s ease-in-out;
   opacity: 1; /* Default state */
