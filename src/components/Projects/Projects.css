@@ -383,3 +383,30 @@
   box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
   transform: translate3d(0, 0, -1em);
 }
+
+
+.page-content .projects-section{
+  transition: opacity 1s ease-in-out;
+}
+
+.page-content.fade-out .projects-section{
+  opacity: 0; 
+}
+
+.page-content.fade-in .projects-section{
+  animation: opaque 1s ease-in-out;
+}
+
+
+.page-content #deerBlack{
+  transition: right 0.8s ease-in-out;
+}
+
+.page-content.fade-out #deerBlack{
+  right: -30vw;
+  transition: right 0.8s ease-in-out;
+}
+
+.page-content.fade-in #deerBlack{
+ animation: moveDilan 1s ease-in-out;
+}

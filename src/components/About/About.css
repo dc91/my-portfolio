@@ -20,7 +20,7 @@
   stroke-width: 3px;
 }
 
-#linear-gradient2 {
+/* #linear-gradient2 {
  animation: rotate 10s forwards infinite; 
 }
 
@@ -31,10 +31,44 @@ rotate: 0deg;
   to{
 rotate: 360deg;
   }
-}
+} */
 
 #dilan {
   rotate: 0;
 }
 
 /* //fade out and smooth between pages!! */
+.page-content .about-section p {
+  transition: opacity 0.8s ease-in-out;
+  opacity: 1; /* Default state */
+}
+
+.page-content.fade-out .about-section p {
+  opacity: 0; /* Fading out */
+}
+
+.page-content.fade-in .about-section p {
+  animation: opaque 0.8s ease-in-out;
+}
+
+@keyframes opaque {
+  from{opacity: 0;}
+  to{opacity: 1;}
+}
+
+
+.page-content #Layer_1 {
+  transition: transform 1s ease-in-out;
+   /* Default state */
+}
+.page-content.fade-out #Layer_1 {
+  transform: translateX(30vw) ; /* Fading out */
+}
+.page-content.fade-in #Layer_1 {
+  animation: moveDilan 1s ease-in-out;
+}
+
+@keyframes moveDilan {
+  from{transform: translateX(30vw);}
+  to{transform: translateX(0vw);}
+}

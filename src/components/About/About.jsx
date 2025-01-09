@@ -22,8 +22,8 @@ function About() {
           viewBox="0 0 595.3 841.9">
           <defs>
             <linearGradient id="linear-gradient2" x1="0" y1="0" x2="500" y2="700" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="#29abe2" />
-              <stop offset="1" stop-color="red" />
+              <stop offset="0" stopColor="#29abe2" />
+              <stop offset="1" stopColor="red" />
             </linearGradient>
           </defs>
           <g id="rest">

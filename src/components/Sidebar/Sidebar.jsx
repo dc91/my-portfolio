@@ -2,7 +2,7 @@ import React from 'react';
 import './Sidebar.css';
 import HeaderBlack from '../../assets/HeaderBlack.svg';
 
-function Sidebar({ activeSection, setActiveSection }) {
+function Sidebar({ activeSection, handleSectionChange }) {
   // const sections = ['about', 'projects', 'skills', 'contact'];
   return (
     <aside className="sidebar">
@@ -15,8 +15,8 @@ function Sidebar({ activeSection, setActiveSection }) {
         <defs>
           <style></style>
           <linearGradient id="linear-gradient" x1="0" y1="0" x2="50" y2="50" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stop-color="#29abe2" />
-            <stop offset="1" stop-color="red" />
+            <stop offset="0" stopColor="#29abe2" />
+            <stop offset="1" stopColor="red" />
           </linearGradient>
         </defs>
         <g id="About">
@@ -28,28 +28,28 @@ function Sidebar({ activeSection, setActiveSection }) {
             <path id="bubble" d="M123.08,49.19c1.42-1.38-3.45-5.44-6.62-10.62-5.2-8.52-1.97-14.5-3.82-20.3C107.02,.57,62.93,.87,38.88,1.04c-15.73,.11-23.4,1.62-29.32,7.34C3.2,14.5,.11,24.25,1.22,33.38c.32,2.61,1.28,10.48,7.37,16.35,6.04,5.82,15.01,6.36,32.71,7.21,11.13,.53,9.77-.42,20.81,.24,3.13,.19,10.42,.53,25.02,1.21,0,0,6.62,.31,13.78-1.92,1.92-.6,3.54-1.28,5.13-2.56,2.75-2.22,2.47-3.88,4.25-5.18,4.24-3.09,11.29,1.93,12.79,.48Z" />
             <g id="btnAbout" className={`btn ${activeSection === 'about' ? 'active' : ''}`}>
               <text transform="translate(22.44 92.01)">
-                <a onClick={() => setActiveSection('about')} href="#about">About Me</a>
+                <a onClick={() => handleSectionChange('about')} href="#about">About Me</a>
               </text>
               <circle cx="13.21" cy="87.82" r="4.25" />
               <use href='#underline'></use>
             </g>
             <g id="btnProjects" className={`btn ${activeSection === 'projects' ? 'active' : ''}`}>
               <text transform="translate(22.74 122.78)">
-                <a onClick={() => setActiveSection('projects')} href="#projects">Projects</a>
+                <a onClick={() => handleSectionChange('projects')} href="#projects">Projects</a>
               </text>
               <circle cx="13.21" cy="119.96" r="4.25" />
               <use transform="translate(0 32)" href='#underline'></use>
             </g>
             <g id="btnSkills" className={`btn ${activeSection === 'skills' ? 'active' : ''}`}>
               <text transform="translate(22.74 156.31)">
-                <a onClick={() => setActiveSection('skills')} href="#skills">Skills</a>
+                <a onClick={() => handleSectionChange('skills')} href="#skills">Skills</a>
               </text>
               <circle cx="13.21" cy="152.11" r="4.25" />
               <use transform="translate(0 64)" href='#underline'></use>
             </g>
             <g id="btnContact" className={`btn ${activeSection === 'contact' ? 'active' : ''}`}>
               <text transform="translate(22.74 188.46)">
-                <a onClick={() => setActiveSection('contact')} href="#contact">Contact</a>
+                <a onClick={() => handleSectionChange('contact')} href="#contact">Contact</a>
               </text>
               <circle cx="13.21" cy="184.26" r="4.25" />
               <use transform="translate(0 95)" href='#underline'></use>

@@ -16,7 +16,7 @@
 
 #deer2Black {
   position: fixed;
-  bottom: 50px;
+  bottom: 55px;
   width: 100vw;
   pointer-events: none; /* Allow clicks to pass through */
 }
@@ -418,4 +418,36 @@
     height: var(--cubeWidth);
     z-index: 1;
   }
+}
+
+
+/* //fade out and smooth between pages!! */
+.page-content .cube-wrapper {
+  transition: opacity 0.8s ease-in-out;
+  opacity: 1; /* Default state */
+}
+
+.page-content.fade-out .cube-wrapper {
+  opacity: 0; /* Fading out */
+}
+
+.page-content.fade-in .cube-wrapper {
+  animation: opaque 0.8s ease-in-out;
+}
+
+.page-content #deer2Black {
+  transition: opacity 1s ease-in-out;
+   /* Default state */
+}
+.page-content.fade-out #deer2Black {
+  /* transform: translateY(50vw) ;  */
+  opacity: 0;
+}
+.page-content.fade-in #deer2Black {
+  animation: opaque 1s ease-in-out;
+}
+
+@keyframes moveDilan2 {
+  from{transform: translateY(50vw);}
+  to{transform: translateY(0vw);}
 }
