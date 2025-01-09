@@ -27,28 +27,4 @@
   max-height: 20vh;
 }
 
-/* //fade out and smooth between pages!! */
-.page-content .contact-section {
-  transition: opacity 0.8s ease-in-out;
-  opacity: 1; /* Default state */
-}
 
-.page-content.fade-out .contact-section {
-  opacity: 0; /* Fading out */
-}
-
-.page-content.fade-in .contact-section {
-  animation: opaque 0.8s ease-in-out;
-}
-
-
-.page-content #fishingBlack {
-  transition: transform 1s ease-in-out;
-   /* Default state */
-}
-.page-content.fade-out #fishingBlack {
-  transform: translateX(30vw) ; /* Fading out */
-}
-.page-content.fade-in #fishingBlack {
-  animation: moveDilan 1s ease-in-out;
-}

@@ -1,8 +1,12 @@
 .sidebar {
-  width: 18rem;
-  max-width: 25vw;
+  width: 375px;
   padding: 20px;
   position: fixed;
+  top: 0;
+}
+
+.sidebar svg {
+  overflow: visible;
 }
 
 #bubble {
@@ -44,7 +48,6 @@
   stroke-width: 0.5px;
 }
 
-
 #underline {
   stroke: black;
   stroke-width: 0.25px;
@@ -56,10 +59,55 @@
 }
 
 .leftBrow {
-  transform: translate(0, 0); /* Use transform instead of translate */
-  transition: transform 0.5s ease; /* Add smooth transition */
+  transform: translate(0, 0); 
+  transition: transform 0.5s ease;
 }
 
-g#Header:hover .leftBrow { /* Correct the selector by removing the direct child combinator '>' */
-  transform: translate(0, -1.5px); /* Move the path */
+g#Header:hover .leftBrow { 
+  transform: translate(0, -1.5px); 
+}
+
+@media (max-width: 1400px) {
+  .sidebar {
+    position: absolute;
+  }
+  .underlineTop {
+    display: none;
+  }
+
+  #bubble {
+    transform: translateX(195px)  scaleX(-1);
+  }
+
+  #welcomeTXT {
+    transform: translateX(90px) translateY(25px);
+  }
+
+  #sideIMG {
+    transform: translateX(-105px);
+    width: 100px;
+  }
+
+  .btn {
+    transform: translateX(0px) translateY(40px);
+  }
+}
+
+@media (max-width: 1000px) {
+.sidebar{
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  padding: 0;
+}
+.btn{
+  transform: translateX(60px) translateY(50px);
+  /* scale: 0.5; */
+}
+g#Header { 
+  width: 50%; 
+}
+/* #bubble, #welcomeTXT {
+  scale: 0.7;
+} */
 }

@@ -439,25 +439,73 @@ const skillData = [
         skillBranch: 'design',
         skill: 'Illustrator',
         content:
-            <p>
-                ILL
-            </p>
+            <div>
+                <p>
+                    ILL
+                </p>
+                <span>
+                    "I'm comfortable working with React to build dynamic and interactive user interfaces.
+                    I enjoy creating reusable components and managing state effectively to keep projects
+                    clean and scalable. While I'm always exploring new features and best practices,
+                    I'm confident in delivering responsive and engaging applications."
+                    "I'm comfortable working with React to build dynamic and interactive user interfaces.
+                    I enjoy creating reusable components and managing state effectively to keep projects
+                    clean and scalable. While I'm always exploring new features and best practices,
+                    I'm confident in delivering responsive and engaging applications."
+                    "I'm comfortable working with React to build dynamic and interactive user interfaces.
+                    I enjoy creating reusable components and managing state effectively to keep projects
+                    clean and scalable. While I'm always exploring new features and best practices,
+                    I'm confident in delivering responsive and engaging applications."
+                </span>
+            </div>
     },
     {
         skillBranch: 'design',
         skill: 'Photoshop',
         content:
-            <p>
-                Photo
-            </p>
+            <div>
+                <p>
+                    Photo
+                </p>
+                <span>
+                    "I'm comfortable working with React to build dynamic and interactive user interfaces.
+                    I enjoy creating reusable components and managing state effectively to keep projects
+                    clean and scalable. While I'm always exploring new features and best practices,
+                    I'm confident in delivering responsive and engaging applications."
+                    "I'm comfortable working with React to build dynamic and interactive user interfaces.
+                    I enjoy creating reusable components and managing state effectively to keep projects
+                    clean and scalable. While I'm always exploring new features and best practices,
+                    I'm confident in delivering responsive and engaging applications."
+                    "I'm comfortable working with React to build dynamic and interactive user interfaces.
+                    I enjoy creating reusable components and managing state effectively to keep projects
+                    clean and scalable. While I'm always exploring new features and best practices,
+                    I'm confident in delivering responsive and engaging applications."
+                </span>
+            </div>
     },
     {
         skillBranch: 'design',
         skill: 'Cubase',
         content:
-            <p>
-                CUBASE
-            </p>
+            <div>
+                <p>
+                    CUBASE
+                </p>
+                <span>
+                    "I'm comfortable working with React to build dynamic and interactive user interfaces.
+                    I enjoy creating reusable components and managing state effectively to keep projects
+                    clean and scalable. While I'm always exploring new features and best practices,
+                    I'm confident in delivering responsive and engaging applications."
+                    "I'm comfortable working with React to build dynamic and interactive user interfaces.
+                    I enjoy creating reusable components and managing state effectively to keep projects
+                    clean and scalable. While I'm always exploring new features and best practices,
+                    I'm confident in delivering responsive and engaging applications."
+                    "I'm comfortable working with React to build dynamic and interactive user interfaces.
+                    I enjoy creating reusable components and managing state effectively to keep projects
+                    clean and scalable. While I'm always exploring new features and best practices,
+                    I'm confident in delivering responsive and engaging applications."
+                </span>
+            </div>
     },
     {
         skillBranch: 'backend',

@@ -1,0 +1,191 @@
+:root {
+    --cubeWidth: 23vw;
+    --cubeDistance: calc(var(--cubeWidth)*1.025/-2);
+    --cubeDistance2: calc(var(--cubeDistance)*1.04);
+
+    --cubeWidth2: 35vw;
+    --cubeDistance22: calc(var(--cubeWidth2)*1.025/-2);
+    --cubeDistance33: calc(var(--cubeDistance22)*1.04);
+
+    --darkBlue: #579CD4;
+    --lightBlue: #A0DBF7;
+    --midBlue: #63BDEB;
+    --gray: #CCCCCB;
+    --red: #CE9178;
+    --darkGray: #808073;
+    --beige: #D7BA7D;
+    --yellow: #FDD700;
+    --purple: #C486BA;
+    --green: #59C2AD;
+  }
+
+/* -------------------------------- */
+/* ---------About Transition-------- */
+/* -------------------------------- */
+
+.page-content .about-section p {
+    transition: opacity 0.8s ease-in-out;
+    opacity: 1;
+    /* Default state */
+}
+
+.page-content.fade-out .about-section p {
+    opacity: 0;
+    /* Fading out */
+}
+
+.page-content.fade-in .about-section p {
+    animation: opaque 0.8s ease-in-out;
+}
+
+.page-content .about-img svg {
+    transition: transform 1s ease-in-out;
+}
+
+.page-content.fade-out .about-img svg {
+    transform: translateX(30vw);
+    /* Fading out */
+}
+
+.page-content.fade-in .about-img svg {
+    animation: moveDilan 1s ease-in-out;
+}
+
+/* -------------------------------- */
+/* ---------Project Transition-------- */
+/* -------------------------------- */
+
+.page-content .projects-section {
+    transition: opacity 1s ease-in-out;
+}
+
+.page-content.fade-out .projects-section {
+    opacity: 0;
+}
+
+.page-content.fade-in .projects-section {
+    animation: opaque 1s ease-in-out;
+}
+
+
+.page-content #deerBlack {
+    transition: right 0.8s ease-in-out;
+}
+
+.page-content.fade-out #deerBlack {
+    left: -30vw;
+    transition: left 0.8s ease-in-out;
+}
+
+.page-content.fade-in #deerBlack {
+    animation: moveDilan3 0.8s ease-in-out;
+}
+
+/* -------------------------------- */
+/* ---------Skills Transition-------- */
+/* -------------------------------- */
+
+.page-content .cube-wrapper {
+    transition: opacity 0.8s ease-in-out;
+    opacity: 1;
+    /* Default state */
+}
+
+.page-content.fade-out .cube-wrapper {
+    opacity: 0;
+    /* Fading out */
+}
+
+.page-content.fade-in .cube-wrapper {
+    animation: opaque 0.8s ease-in-out;
+}
+
+.page-content #deer2Black {
+    transition: opacity 0.8s ease-in-out;
+    opacity: 1;
+}
+
+.page-content.fade-out #deer2Black {
+    opacity: 0;
+}
+
+.page-content.fade-in #deer2Black {
+    animation: opaque 0.8s ease-in-out;
+}
+
+/* -------------------------------- */
+/* ---------Contact Transition-------- */
+/* -------------------------------- */
+.page-content .contact-section {
+    transition: opacity 0.8s ease-in-out;
+    opacity: 1;
+    /* Default state */
+}
+
+.page-content.fade-out .contact-section {
+    opacity: 0;
+    /* Fading out */
+}
+
+.page-content.fade-in .contact-section {
+    animation: opaque 0.8s ease-in-out;
+}
+
+
+.page-content #fishingBlack {
+    transition: transform 1s ease-in-out;
+    /* Default state */
+}
+
+.page-content.fade-out #fishingBlack {
+    transform: translateX(30vw);
+    /* Fading out */
+}
+
+.page-content.fade-in #fishingBlack {
+    animation: moveDilan 1s ease-in-out;
+}
+
+/* -------------------------------- */
+/* ---------Animation-------- */
+/* -------------------------------- */
+
+@keyframes moveDilan {
+    from {
+        transform: translateX(30vw);
+    }
+
+    to {
+        transform: translateX(0vw);
+    }
+}
+
+@keyframes moveDilan2 {
+    from {
+        transform: translateY(50vw);
+    }
+
+    to {
+        transform: translateY(0vw);
+    }
+}
+
+@keyframes moveDilan3 {
+    from {
+        left: -30vw
+    }
+
+    to {
+        left: 0;
+    }
+}
+
+@keyframes opaque {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

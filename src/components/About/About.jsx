@@ -16,6 +16,7 @@ function About() {
         technical expertise, creativity, and diverse experiences to craft innovative solutions and
         meaningful projects. Welcome to my portfolio—let's create something amazing together!
       </p>
+	  {/* Rest is just svg */}
       <div className="about-img">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.3 841.9">
           <defs>

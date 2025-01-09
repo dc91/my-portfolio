@@ -30,6 +30,7 @@
   padding-top: 14vh;
   /* transition: padding-top 2s ease; */
 }
+
 .projects-grid:has(.project-card.active) {
   padding-top: 2rem;
   transition: all 2s ease;
@@ -51,10 +52,10 @@
   opacity: 1;
   box-shadow: 0 0 0 2px #b18597, 0 0.625em 0 0 #ffe3e2;
   transform: translateY(0);
-  transition: background-color 1.875s ease-in-out, 
-  transform 1.5s ease,
-  box-shadow 1.5s ease;
-} 
+  transition: background-color 1.875s ease-in-out,
+    transform 1.5s ease,
+    box-shadow 1.5s ease;
+}
 
 .project-content {
   display: none;
@@ -67,8 +68,9 @@
   transform: translateY(-0.1em);
   box-shadow: 0 0 0 2px #b18597, 0 0.95em 0 0 #ffe3e2;
 }
-.project-card:not(.active):hover > .viewPortCards {
-  box-shadow:  0 0.35em 0 0 #c6adad;
+
+.project-card:not(.active):hover>.viewPortCards {
+  box-shadow: 0 0.35em 0 0 #c6adad;
 }
 
 .project-card a {
@@ -81,16 +83,18 @@
   color: #000000;
 }
 
-.project-card:not(.active):hover > .viewPortCards{
+.project-card:not(.active):hover>.viewPortCards {
   filter: grayscale(0);
 }
-.project-card:not(.active):hover > .viewPortCards img {
+
+.project-card:not(.active):hover>.viewPortCards img {
   left: -300px;
   width: 900px;
   filter: blur(0);
   -webkit-filter: blur(0);
 }
-.project-card:hover > .projectName {
+
+.project-card:hover>.projectName {
   opacity: 0;
   pointer-events: none;
 }
@@ -127,7 +131,7 @@
   position: absolute;
   left: -200px;
   top: 0;
-  width: 800px; 
+  width: 800px;
   object-fit: cover;
   height: auto;
   transition:
@@ -155,18 +159,18 @@
   animation-delay: 800ms;
 }
 
-.project-card.active .project-content{
+.project-card.active .project-content {
   display: block;
   height: 0;
   opacity: 0;
   animation: show-projectContent 1s ease 1.8s forwards;
 }
 
-.project-card.active .gitLinkButton{
+.project-card.active .gitLinkButton {
   animation: move-gitLinkButton 1s ease forwards;
 }
 
-.project-card.active .closeButton{
+.project-card.active .closeButton {
   animation: move-closeButton 1s ease forwards;
 }
 
@@ -178,12 +182,13 @@
   filter: none;
   cursor: default;
 }
+
 .project-card.active .project-snap {
   display: block;
   position: relative;
   width: 90%;
   max-width: 800px;
-  margin: auto;  
+  margin: auto;
   left: 0;
 }
 
@@ -199,17 +204,22 @@
 /* ------------------------------------ */
 
 .viewPortCards::-webkit-scrollbar {
-  width: 5px;               /* width of the entire scrollbar */
+  width: 5px;
+  /* width of the entire scrollbar */
 }
 
 .viewPortCards::-webkit-scrollbar-track {
-  background: #fff;        /* color of the tracking area */
+  background: #fff;
+  /* color of the tracking area */
 }
 
 .viewPortCards::-webkit-scrollbar-thumb {
-  background-color: rgb(128, 128, 128);    /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
-  border: 3px solid rgb(187, 187, 187);  /* creates padding around scroll thumb */
+  background-color: rgb(128, 128, 128);
+  /* color of the scroll thumb */
+  border-radius: 20px;
+  /* roundness of the scroll thumb */
+  border: 3px solid rgb(187, 187, 187);
+  /* creates padding around scroll thumb */
 }
 
 /* ------------------------------------ */
@@ -289,21 +299,25 @@
   0% {
     opacity: 1;
   }
+
   15% {
     opacity: 0;
   }
+
   25% {
     opacity: 0;
     max-width: 18vw;
     min-width: 230px;
     min-height: 320px;
   }
+
   50% {
     position: absolute;
     grid-column: 1;
     grid-row: 1;
     opacity: 0;
   }
+
   100% {
     position: absolute;
     grid-column: 1;
@@ -316,7 +330,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  } 
+  }
 }
 
 @keyframes enlarge-viewPort {
@@ -325,14 +339,17 @@
     min-height: 74%;
     width: 100%;
   }
+
   25% {
     opacity: 0;
   }
+
   75% {
     opacity: 0;
   }
+
   100% {
-    position: absolute; 
+    position: absolute;
     top: 0;
     opacity: 1;
 
@@ -343,7 +360,7 @@
     border: 4px solid #99999949;
     background-color: #fff;
     overflow-y: auto;
-  } 
+  }
 }
 
 @keyframes show-projectContent {
@@ -351,6 +368,7 @@
     display: none;
     opacity: 0;
   }
+
   100% {
     display: block;
     opacity: 1;
@@ -358,26 +376,31 @@
 }
 
 @keyframes move-gitLinkButton {
-  0%{
+  0% {
     display: inline-block;
   }
-  75%{
+
+  75% {
     display: none;
   }
-  100%{
+
+  100% {
     display: flex;
     position: inherit;
     bottom: 4.5rem;
   }
 }
+
 @keyframes move-closeButton {
-  0%{
+  0% {
     display: none;
   }
-  75%{
+
+  75% {
     display: none;
   }
-  100%{
+
+  100% {
     display: flex;
     opacity: 1;
     position: absolute;
@@ -391,37 +414,105 @@
   }
 }
 
-/* -------------------------------- */
-/* ---------Page Transition-------- */
-/* -------------------------------- */
-
-.page-content .projects-section{
-  transition: opacity 1s ease-in-out;
+@media (max-width: 1400px) {
+  .projects-grid {
+    padding: 2rem;
+    padding-top: 16vh;
+  }
 }
 
-.page-content.fade-out .projects-section{
-  opacity: 0; 
-}
+@media (max-width: 1000px) {
+  .projects-grid {
+    width: 100vw;
+    max-width: 100vw;
+    margin: 25vh 0 0 0;
+    padding: 0;
+    grid-template-columns: 1fr;
+    /* gap: 5px; */
+  }
 
-.page-content.fade-in .projects-section{
-  animation: opaque 1s ease-in-out;
-}
+  .project-card {
+    margin: 0;
+    min-width: 94%;
+    min-height: 600px;
+  }
+
+  #deerBlack {
+    position: relative;
+    bottom: -1.5vh;
+  }
+  
+  .project-card .projectName {
+    opacity: 0;
+  }
+  
+  .project-card .viewPortCards {
+    filter: none;
+    opacity: 1;
+
+    margin-top: 2.5%;
+    min-height: none;
+    height: 480px;
+    min-width: 95%;
+
+    border: 4px solid #99999949;
+    background-color: #fff;
+    overflow-y: auto;
+  }
+  
+  .project-card .project-content {
+    display: block;
+    opacity: 1;
+  }
+  
+  .project-card .gitLinkButton {
+    top: 1vh;
+  }
+  
+  .project-card .closeButton {
+    display: none;
+  }
+  
+  .project-card #projectImage {
+    display: none;
+  }
+  
+  .project-card img {
+    filter: none;
+    cursor: default;
+  }
+  
+  .project-card .project-snap {
+    display: block;
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    left: 0;
+  }
+  
+  /* ------------------------------------ */
+  /* --------------ViewPort Scroll------- */
+  /* ------------------------------------ */
+  
+  .viewPortCards::-webkit-scrollbar {
+    width: 5px;
+    /* width of the entire scrollbar */
+  }
+  
+  .viewPortCards::-webkit-scrollbar-track {
+    background: #fff;
+    /* color of the tracking area */
+  }
+  
+  .viewPortCards::-webkit-scrollbar-thumb {
+    background-color: rgb(128, 128, 128);
+    /* color of the scroll thumb */
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+    border: 3px solid rgb(187, 187, 187);
+    /* creates padding around scroll thumb */
+  }
 
 
-.page-content #deerBlack{
-  transition: right 0.8s ease-in-out;
-}
-
-.page-content.fade-out #deerBlack{
-  left: -30vw;
-  transition: left 0.8s ease-in-out;
-}
-
-.page-content.fade-in #deerBlack{
- animation: moveDilan3 0.8s ease-in-out;
-}
-
-@keyframes moveDilan3 {
-  from{ left: -30vw}
-  to{ left: 0; }
 }
