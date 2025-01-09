@@ -15,13 +15,12 @@ function Projects() {
   };
 
   return (
-    <section id="projects" className="projects-section">
-      <div className="projects-grid">
+    <section id='projects' className='projects-section'>
+      <div className='projects-grid'>
         {projects.map((project, index) => (
           <div
             key={index}
-            className={`project-card ${activeProject === index ? 'active' : activeProject !== null ? 'inactive' : ''}`}
-          >
+            className={`project-card ${activeProject === index ? 'active' : activeProject !== null ? 'inactive' : ''}`}>
             <p className='projectName'>{project.name}</p>
             <div className='viewPortCards' onClick={() => handleCardClick(index)}>
               <img id='projectImage' src={project.image} alt={`${project.name} Thumbnail`} />
@@ -30,9 +29,9 @@ function Projects() {
               {project.content}
               </div>
             </div>
-            <a className='button' href={project.repo} target="_blank" rel="noreferrer">GitHub Link</a>
+            <a className='gitLinkButton' href={project.repo} target="_blank" rel="noreferrer">GitHub Link</a>
             {activeProject === index && (
-              <button className="close-button" onClick={handleClose}>
+              <button className='closeButton' onClick={handleClose}>
                 Close
               </button>
             )}
@@ -40,7 +39,7 @@ function Projects() {
         ))}
       </div>
       
-      <img id="deerBlack" src={Deer} alt="Background Deer Illustration" />
+      <img id='deerBlack' src={Deer} alt="Background Deer Illustration" />
     </section>
   );
 }

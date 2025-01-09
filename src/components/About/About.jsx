@@ -1,6 +1,5 @@
 import React from 'react';
 import './About.css';
-import JumpingBlack from '../../assets/JumpingBlack.svg';
 
 function About() {
   return (
@@ -17,9 +16,8 @@ function About() {
         technical expertise, creativity, and diverse experiences to craft innovative solutions and
         meaningful projects. Welcome to my portfolio—let's create something amazing together!
       </p>
-      <div className="about-imgs">
-        <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 595.3 841.9">
+      <div className="about-img">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.3 841.9">
           <defs>
             <linearGradient id="linear-gradient2" x1="0" y1="0" x2="500" y2="700" gradientUnits="userSpaceOnUse">
               <stop offset="0" stopColor="#29abe2" />
@@ -130,7 +128,6 @@ function About() {
             <path d="M455.1,210.7c0,3.1-0.8,4.7-3.1,6.2C451.7,213.9,453.2,212.8,455.1,210.7z" />
           </g>
         </svg>
-        {/* <img id="jumpingBlack" src={JumpingBlack} /> */}
       </div>
     </section>
   );

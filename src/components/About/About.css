@@ -6,25 +6,21 @@
   padding: 15vh 30vw 15vh 30vw;
 }
 
-#Layer_1 {
+.about-img svg {
   position:fixed;
   right: 50px;
   bottom: 70px;
   max-width: 20vw;
   max-height: 50vh;
   overflow: visible;
-}
-
-#Layer_1 {
   stroke: url(#linear-gradient2);
   stroke-width: 3px;
 }
 
-#dilan {
-  rotate: 0;
-}
 
-
+/* -------------------------------- */
+/* ---------Page Transition-------- */
+/* -------------------------------- */
 
 .page-content .about-section p {
   transition: opacity 0.8s ease-in-out;
@@ -44,15 +40,13 @@
   to{opacity: 1;}
 }
 
-
-.page-content #Layer_1 {
+.page-content .about-img svg {
   transition: transform 1s ease-in-out;
-   /* Default state */
 }
-.page-content.fade-out #Layer_1 {
+.page-content.fade-out .about-img svg {
   transform: translateX(30vw) ; /* Fading out */
 }
-.page-content.fade-in #Layer_1 {
+.page-content.fade-in .about-img svg {
   animation: moveDilan 1s ease-in-out;
 }
 
